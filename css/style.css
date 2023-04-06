@@ -1,34 +1,28 @@
 @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap");
 
-.attribution {
-  margin-top: 20px;
-  font-size: 11px;
-  text-align: center;
-  color: white;
-}
-
-.attribution a {
-  color: hsl(228, 45%, 44%);
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-  box-sizing: border-box;
   background-color: hsl(217, 54%, 11%);
   font-family: "Outfit", sans-serif;
 }
 
 .container {
-  width: 350px;
-  height: 600px;
-  margin: 0 auto;
-  padding: 20px;
+  position: relative;
+  width: 400px;
+  height: 620px;
+  margin: 9rem auto;
+  padding: 25px;
   border-radius: 15px;
   background-color: hsl(216, 50%, 16%);
 }
 
 .inner-box {
-  display: flex;
-  justify-content: center;
+  display: block;
 }
 
 .inner-box img {
@@ -37,10 +31,36 @@ body {
   border-radius: 15px;
 }
 
+.overlay {
+  display: flex;
+  position: absolute;
+  top: 25px;
+  left: 25px;
+  width: 350px;
+  height: 350px;
+  opacity: 0;
+  transition: 0.5s ease;
+  background-color: hsl(178, 100%, 50%);
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px;
+}
+
+.overlay img {
+  width: 150px;
+  height: 150px;
+}
+
+.container:hover .overlay {
+  opacity: 0.5;
+  cursor: pointer;
+}
+
 #heading {
   color: white;
   font-weight: bold;
   font-size: 22px;
+  padding: 25px 0 20px 0;
 }
 
 #heading:hover {
@@ -49,6 +69,7 @@ body {
 }
 
 #subheading {
+  padding-bottom: 20px;
   color: rgba(161, 171, 180, 0.922);
   font-size: 18px;
 }
@@ -56,6 +77,7 @@ body {
 .other {
   display: flex;
   justify-content: space-between;
+  padding-bottom: 10px;
 }
 
 #eth,
@@ -103,4 +125,15 @@ body {
 .author span:hover {
   color: hsl(178, 100%, 50%);
   cursor: pointer;
+}
+
+.attribution {
+  margin-top: 20px;
+  font-size: 11px;
+  text-align: center;
+  color: white;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
 }
